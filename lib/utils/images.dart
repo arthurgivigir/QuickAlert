@@ -10,7 +10,8 @@ class AppAnim {
   static const error = 'packages/quickalert/assets/error.gif';
 
   /// Warning Animation
-  static const warning = 'packages/quickalert/assets/warning.gif';
+  // static const warning = 'packages/quickalert/assets/warning.gif';
+  static const warning = 'packages/quickalert/assets/sipol/warning.png';
 
   /// Info Animation
   static const info = 'packages/quickalert/assets/info.gif';

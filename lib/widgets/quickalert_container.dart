@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:quickalert/models/quickalert_options.dart';
 import 'package:quickalert/models/quickalert_type.dart';
-import 'package:quickalert/utils/images.dart';
+
 import 'package:quickalert/widgets/quickalert_buttons.dart';
+import 'package:quickalert/widgets/quickalert_colors.dart';
 
 class QuickAlertContainer extends StatelessWidget {
   final QuickAlertOptions options;
@@ -54,33 +55,58 @@ class QuickAlertContainer extends StatelessWidget {
   }
 
   Widget buildHeader(context) {
-    String? anim = AppAnim.success;
+    IconData? icon = Icons.task_alt_rounded;
     switch (options.type) {
       case QuickAlertType.success:
-        anim = AppAnim.success;
+        icon = Icons.task_alt_rounded;
         break;
       case QuickAlertType.error:
-        anim = AppAnim.error;
+        icon = Icons.error;
         break;
       case QuickAlertType.warning:
-        anim = AppAnim.warning;
+        icon = Icons.error;
         break;
       case QuickAlertType.confirm:
-        anim = AppAnim.confirm;
+        icon = Icons.help;
         break;
       case QuickAlertType.info:
-        anim = AppAnim.info;
+        icon = Icons.info;
         break;
       case QuickAlertType.loading:
-        anim = AppAnim.loading;
+        icon = Icons.loop_rounded;
         break;
       default:
-        anim = AppAnim.info;
+        icon = Icons.info;
         break;
     }
 
-    if (options.customAsset != null) {
-      anim = options.customAsset;
+    Color? color = Colors.green;
+    switch (options.type) {
+      case QuickAlertType.success:
+        color = Colors.green;
+        break;
+      case QuickAlertType.error:
+        color = Colors.red;
+        break;
+      case QuickAlertType.warning:
+        color = Colors.yellow;
+        break;
+      case QuickAlertType.confirm:
+        color = Colors.blue;
+        break;
+      case QuickAlertType.info:
+        color = Colors.blue;
+        break;
+      case QuickAlertType.loading:
+        color = Colors.white;
+        break;
+      default:
+        color = Colors.white;
+        break;
+    }
+
+    if (options.customIcon != null) {
+      icon = options.customIcon;
     }
     return Container(
       width: double.infinity,
@@ -89,9 +115,27 @@ class QuickAlertContainer extends StatelessWidget {
       decoration: BoxDecoration(
         color: options.headerBackgroundColor,
       ),
-      child: Image.asset(
-        anim ?? "",
-        fit: BoxFit.cover,
+      child: Container(
+        decoration: BoxDecoration(
+          color: options.headerBackgroundColor,
+        ),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Container(
+              decoration: const BoxDecoration(
+                shape: BoxShape.circle,
+                color: AppColors.primary,
+              ),
+              padding: const EdgeInsets.all(11.0),
+              child: Icon(
+                icon,
+                size: 80,
+                color: color,
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }

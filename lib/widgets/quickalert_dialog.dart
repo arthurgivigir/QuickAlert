@@ -5,6 +5,7 @@ import 'package:quickalert/models/quickalert_animtype.dart';
 import 'package:quickalert/models/quickalert_options.dart';
 import 'package:quickalert/models/quickalert_type.dart';
 import 'package:quickalert/utils/animate.dart';
+import 'package:quickalert/widgets/quickalert_colors.dart';
 import 'package:quickalert/widgets/quickalert_container.dart';
 
 /// QuickAlert
@@ -45,31 +46,34 @@ class QuickAlert {
     VoidCallback? onCancelBtnTap,
 
     /// Confirmation button text
-    String confirmBtnText = 'Okay',
+    String confirmBtnText = 'Ok',
 
     /// Cancel button text
-    String cancelBtnText = 'Cancel',
+    String cancelBtnText = 'Cancelar',
 
     /// Color for confirm button
-    Color confirmBtnColor = Colors.blue,
+    Color confirmBtnColor = Colors.white,
 
     /// TextStyle for confirm button
-    TextStyle? confirmBtnTextStyle,
+    TextStyle? confirmBtnTextStyle = const TextStyle(
+      color: AppColors.primaryTextColor,
+      fontWeight: FontWeight.bold,
+    ),
 
     /// TextStyle for cancel button
     TextStyle? cancelBtnTextStyle,
 
     /// Background Color for dialog
-    Color backgroundColor = Colors.white,
+    Color backgroundColor = AppColors.primary,
 
     /// Header Background Color for dialog
-    Color headerBackgroundColor = Colors.white,
+    Color headerBackgroundColor = AppColors.primaryDarker,
 
     /// Color of title
-    Color titleColor = Colors.black,
+    Color titleColor = AppColors.secondaryTextColor,
 
     /// Color of text
-    Color textColor = Colors.black,
+    Color textColor = AppColors.secondaryTextColor,
 
     /// Barrier Color of dialog
     Color? barrierColor,
@@ -83,8 +87,8 @@ class QuickAlert {
     /// Dialog Border Radius
     double borderRadius = 15.0,
 
-    /// Asset path of your Image file
-    String? customAsset,
+    /// Custom Icon
+    IconData? customIcon,
 
     /// Width of the dialog
     double? width,
@@ -126,7 +130,7 @@ class QuickAlert {
       showCancelBtn: showCancelBtn,
       showConfirmBtn: showConfirmBtn,
       borderRadius: borderRadius,
-      customAsset: customAsset,
+      customIcon: customIcon,
       width: width,
     );
 

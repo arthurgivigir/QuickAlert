@@ -53,9 +53,6 @@ class _MyHomePageState extends State<MyHomePage> {
           type: QuickAlertType.error,
           title: 'Oops...',
           text: 'Sorry, something went wrong',
-          backgroundColor: Colors.black,
-          titleColor: Colors.white,
-          textColor: Colors.white,
         );
       },
       title: 'Error',
@@ -141,7 +138,7 @@ class _MyHomePageState extends State<MyHomePage> {
           type: QuickAlertType.custom,
           barrierDismissible: true,
           confirmBtnText: 'Save',
-          customAsset: 'assets/custom.gif',
+          customIcon: Icons.phone_outlined,
           widget: TextFormField(
             decoration: const InputDecoration(
               alignLabelWithHint: true,
@@ -227,11 +224,11 @@ class _MyHomePageState extends State<MyHomePage> {
       elevation: 1,
       child: ListTile(
         onTap: onTap,
-        leading: CircleAvatar(
-          backgroundImage: AssetImage(
-            leadingImage,
-          ),
-        ),
+        // leading: CircleAvatar(
+        //   backgroundImage: AssetImage(
+        //     leadingImage,
+        //   ),
+        // ),
         title: Text(title ?? ""),
         subtitle: Text(text ?? ""),
         trailing: const Icon(
