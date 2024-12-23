@@ -61,7 +61,7 @@ class QuickAlertContainer extends StatelessWidget {
         icon = Icons.task_alt_rounded;
         break;
       case QuickAlertType.error:
-        icon = Icons.warning_rounded;
+        icon = Icons.error;
         break;
       case QuickAlertType.warning:
         icon = Icons.error;
