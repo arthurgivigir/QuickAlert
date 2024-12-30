@@ -67,7 +67,7 @@ class QuickAlert {
     Color backgroundColor = AppColors.primary,
 
     /// Header Background Color for dialog
-    Color headerBackgroundColor = AppColors.primaryDarker,
+    Color? headerBackgroundColor,
 
     /// Color of title
     Color titleColor = AppColors.secondaryTextColor,

@@ -1,5 +1,6 @@
 import 'dart:async';
 
+import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:quickalert/models/quickalert_animtype.dart';
 import 'package:quickalert/models/quickalert_type.dart';

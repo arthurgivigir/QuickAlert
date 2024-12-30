@@ -113,11 +113,43 @@ class QuickAlertContainer extends StatelessWidget {
       height: 150,
       clipBehavior: Clip.antiAlias,
       decoration: BoxDecoration(
-        color: options.headerBackgroundColor,
+        gradient: options.headerBackgroundColor == null
+            ? const LinearGradient(
+                colors: [
+                  AppColors.appPrimaryDark,
+                  AppColors.appPrimary,
+                ],
+                begin: Alignment.topLeft,
+                end: Alignment.bottomRight,
+              )
+            : LinearGradient(
+                colors: [
+                  options.headerBackgroundColor!,
+                  options.headerBackgroundColor!,
+                ],
+                begin: Alignment.topLeft,
+                end: Alignment.bottomRight,
+              ),
       ),
       child: Container(
         decoration: BoxDecoration(
-          color: options.headerBackgroundColor,
+          gradient: options.headerBackgroundColor == null
+              ? const LinearGradient(
+                  colors: [
+                    AppColors.appPrimaryDark,
+                    AppColors.appPrimary,
+                  ],
+                  begin: Alignment.topLeft,
+                  end: Alignment.bottomRight,
+                )
+              : LinearGradient(
+                  colors: [
+                    options.headerBackgroundColor!,
+                    options.headerBackgroundColor!,
+                  ],
+                  begin: Alignment.topLeft,
+                  end: Alignment.bottomRight,
+                ),
         ),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
